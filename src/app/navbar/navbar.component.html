@@ -1,0 +1,49 @@
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div>
+            <a class="navbar-brand">
+                <img class="logo horizontal-logo" src="../../assets/lion.jpg" style= "width: 120px; height: 80px;" > 
+            </a>
+        </div>
+        
+        <div class="dropdown" routerLinkActive="active" *ngIf="rol!='cliente'" >       
+
+            <ul class="navbar-nav mr-auto align-items-center">
+
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="nsala">Nueva Sala <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="vsala">Ver Sala <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="msala">Modificar Sala <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="esala">Eliminar Sala <span class="sr-only">(current)</span></a>
+                </li>    
+            </ul>
+        </div>
+
+        <div class="dropdown" routerLinkActive="active" *ngIf="rol!='administrador'" >       
+
+            <ul class="navbar-nav mr-auto align-items-center">
+
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="resersala">Reservar Sala <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="verreserva">Ver Salas Reservadas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="liberarsala">Liberar Sala <span class="sr-only">(current)</span></a>
+                </li> 
+            </ul>
+        </div>
+    
+        <div style="margin-left: 40%; color: blue;">
+            <label>{{nombre}}</label>
+            <a style="color: gray;" (click)="logout()"> LogOut</a>
+        </div>
+        
+    </nav>

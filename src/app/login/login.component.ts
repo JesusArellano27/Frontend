@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       let nombre:string = data[2];
 
       localStorage.setItem("rol",rol);//Almacenamiento de información en el localstorage
-      localStorage.setItem("idArea",nombre);
+      localStorage.setItem("nombre",nombre);
       this.resultado = data;
 
       //Cambio de pantalla dependiendo al usuario logeado, datos recibidos desde el backend
