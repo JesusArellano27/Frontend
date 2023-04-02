@@ -1,1 +1,20 @@
-<p>nuevasala works!</p>
+<body>
+    
+    <legend class="Titulo">Creación De Nueva Sala</legend>
+    
+    <form [formGroup]="salasForm" (ngSubmit)="guardarSala(salasForm.value)">
+        <div class="Contenido">
+            <textarea formControlName="descripcion" class="form-control" placeholder="Ingresa una descripción para identificar la sala" rows="6"></textarea>
+        </div>
+
+        <div class="capacidad">            
+            <input formControlName="capacidad" class="form-control" type="number"  min="0" max="100" placeholder="Ingrese la capacidad de personas en la sala">
+        </div>
+        
+        <p class="BotonGuardar">
+            <input type="submit" class="btn btn-lg btn-primary"value="Guardar Indicador">
+        </p>
+
+    </form>
+
+</body>
