@@ -1,1 +1,31 @@
-<p>verreservaciones works!</p>
+<div class="table table-responsive">
+
+    <table class="table custom-table">      
+        <thead style="background-color:gray; color: white;">   
+        <tr>
+            <th>Numero de la sala</th>
+            <th>Estado</th>
+            <th>Fecha de reservación</th>
+            <th>Hora inicio</th>
+            <th>Minuto inicio</th>
+            <th>Hora fin</th>
+            <th>Minuto fin</th>
+            <th>Numero de personas</th>
+            <th>Cliente</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let Salas of Salas; let indice=index">
+            <tr>
+                <td>{{Salas.idsala}}</td>
+                <td>Reservación Activa</td>
+                <td>{{Salas.diareservacion}}</td>
+                <td>{{Salas.horainicio}}</td>
+                <td>{{Salas.minutoinicio}}</td>
+                <td>{{Salas.horafin}}</td>
+                <td>{{Salas.minutofin}}</td>
+                <td>{{Salas.npersonas}}</td>
+                <td>{{Salas.cliente}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
