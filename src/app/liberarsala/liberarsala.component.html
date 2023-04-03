@@ -1,1 +1,39 @@
-<p>liberarsala works!</p>
+<body>
+    <legend class="Titulo">Liberación manual de salas</legend>
+
+    <p  class="Lista">
+        <select (click)="InfoSala()" required [(ngModel)]="Salas.idreservacion" class="Lista">
+            <option value="{{Lista.idreservacion}}" *ngFor="let Lista of ListaSalas">{{Lista.idreservacion}}</option>
+        </select>
+    </p>
+
+    <form [formGroup]="salasForm" (ngSubmit)="reservarSala(salasForm.value)">
+
+        <div class="capacidad">            
+            <input formControlName="fechaReservacion" class="form-control" type="date">
+        </div>
+
+        <label class="Titulo2">Fecha Inicial(Utilice formato 24 horas)</label>   
+        <div class="tiempo">         
+            <input formControlName="horaInicial" class="form-control" type="number" placeholder="Hora">
+            <input formControlName="minutoInicial" class="form-control" type="number" placeholder="Minuto">
+        </div>
+
+        <label class="Titulo2">Fecha Final</label>   
+        <div class="tiempo">            
+            <input formControlName="horaFinal" class="form-control" type="number" placeholder="Hora">
+            <input formControlName="minutoFinal" class="form-control" type="number" placeholder="Minuto">
+        </div>
+
+        <label class="Titulo2">Personas Para La Sala</label>   
+        <div class="tiempo">            
+            <input formControlName="npersonas" class="form-control" type="number" placeholder="Numero de personas">
+        </div>
+
+        <p class="BotonGuardar">
+            <input type="submit" class="btn btn-lg btn-primary" value="Liberar Sala">
+        </p>
+    </form>
+    
+
+</body>

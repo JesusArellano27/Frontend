@@ -1,5 +1,6 @@
 export interface SalasR{
     idsala:number;
+    idreservacion:number;
     estado:number;
     diareservacion:String;
     horainicio:number;
