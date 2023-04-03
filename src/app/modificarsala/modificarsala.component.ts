@@ -34,6 +34,7 @@ export class ModificarsalaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   guardarSala(form: any){
 
     if(form.descripcion!=null && form.capacidad!=null){
@@ -58,8 +59,6 @@ export class ModificarsalaComponent implements OnInit {
       this.salasForm.controls['descripcion'].setValue(data[0]);
       this.salasForm.controls['capacidad'].setValue(data[1]);
     });
-    
-
   }
 
 }
