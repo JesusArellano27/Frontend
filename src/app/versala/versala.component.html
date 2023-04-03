@@ -1,1 +1,19 @@
-<p>versala works!</p>
+<div class="table table-responsive">
+
+    <table class="table custom-table">      
+        <thead style="background-color:gray; color: white;">   
+        <tr>
+            <th>Numero de la sala</th>
+            <th>Descripción</th>
+            <th>Capacidad de personas</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let Salas of Salas; let indice=index">
+            <tr>
+                <td>{{Salas.idsala}}</td>
+                <td>{{Salas.descripcion}}</td>
+                <td>{{Salas.capacidad}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
