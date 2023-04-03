@@ -36,6 +36,10 @@ export class ReservarsalaComponent implements OnInit {
   nombre  = localStorage.getItem("nombre");
 
   constructor(private httpClient: HttpClient) { 
+    this.httpClient.post<any>(`${this.API_ENDPOINT}/liberarsalaautomatico`, this.Salas.idsala).subscribe((data:any)=>{
+              this.Salas = data;
+    }); //Funciona como un triger de base de datos
+
     this.httpClient.get(this.API_ENDPOINT + '/versalas').subscribe((data:any)=>{
       this.ListaSalas = data;
     });

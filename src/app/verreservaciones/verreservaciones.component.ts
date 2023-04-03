@@ -15,6 +15,11 @@ export class VerreservacionesComponent implements OnInit {
   Salas!: SalasR[];
 
   constructor(private httpClient: HttpClient) {
+
+    this.httpClient.post<any>(`${this.API_ENDPOINT}/liberarsalaautomatico`,1).subscribe((data:any)=>{
+      this.Salas = data;
+    });//Funciona como un triger de base de datos
+
     this.httpClient.get(this.API_ENDPOINT + '/versalasreservadas').subscribe((data:any)=>{
       this.Salas = data;
       console.log(data);
