@@ -1,1 +1,24 @@
-<p>eliminarsala works!</p>
+<body>
+    <legend class="Titulo">Eliminación de salas</legend>
+
+    <p  class="Lista">
+        <select (click)="cambioSala()" required [(ngModel)]="Salas.idsala" class="Lista">
+            <option value="{{Lista.idsala}}" *ngFor="let Lista of ListaSalas">{{Lista.descripcion}}</option>
+        </select>
+    </p>
+
+    <form [formGroup]="salasForm" (ngSubmit)="EliminarSala(salasForm.value)">
+        <div class="Contenido">
+            <textarea formControlName="descripcion" class="form-control" placeholder="Ingresa una descripción para identificar la sala" rows="6"></textarea>
+        </div>
+
+        <div class="capacidad">            
+            <input formControlName="capacidad" class="form-control" type="number"  min="0" max="100" placeholder="Ingrese la capacidad de personas en la sala">
+        </div>
+
+        <p class="BotonGuardar">
+            <input type="submit" class="btn btn-lg btn-primary" value="Eliminar Sala">
+        </p>
+    </form>
+
+</body>
